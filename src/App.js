@@ -7,7 +7,7 @@ function App() {
   const {getProducts} = useProductsContext();
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [getProducts]);
 
   return (
     <div className="app">

@@ -1,15 +1,18 @@
-import { createContext, useState } from 'react';
+import { createContext, useState, useCallback } from 'react';
 import axios from 'axios';
 
 const ProductsContext = createContext();
 
 function Provider({children}){
     const [products, setProducts] = useState([]);
+    // use json-server for dev
     const apiUrl = 'http://localhost:3001';
-    const getProducts = async () => {
-        const response = await axios.get(`${apiUrl}/products`);
-        setProducts(response.data);
-    }
+
+    // useCallback to get stable function reference to use getProducts inside useEffect in App.js
+    const getProducts = useCallback(async () => {
+      const response = await axios.get(`${apiUrl}/products`);
+      setProducts(response.data);
+    }, []);
 
     const createProduct = async (name) => {
         const response = await axios.post(`${apiUrl}/products`, {name: name});
