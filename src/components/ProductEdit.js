@@ -1,22 +1,25 @@
-import { useState } from 'react';
+import { useState} from 'react';
+import useProductsContext from '../hooks/use-products-context';
 
 function ProductEdit({ product, onSubmit }) {
-  const [title, setTitle] = useState(product.title);
+  const [name, setName] = useState(product.name);
+
+  const { editProductById } = useProductsContext();
 
   const handleChange = (event) => {
-    setTitle(event.target.value);
+    setName(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
-    onSubmit(product.id, title);
+    onSubmit();
+    editProductById(product.id, name)
   };
 
   return (
     <form onSubmit={handleSubmit} className="product-edit">
-      <label>Product Title</label>
-      <input className="input" value={title} onChange={handleChange} />
+      <label>Product Name</label>
+      <input className="input" value={name} onChange={handleChange} />
       <button className="button is-primary">SAVE</button>
     </form>
   );

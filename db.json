@@ -1,0 +1,30 @@
+{
+  "products": [
+    {
+      "name": "Samsung Monitor",
+      "id": 1,
+      "price": 300,
+      "category": "Electronics"
+    },
+    {
+      "name": "ThinkPad laptop",
+      "id": 2,
+      "price": 2000,
+      "category": "Electronics"
+    },
+    {
+      "name": "3M Mouse Pad",
+      "id": 3,
+      "price": 30,
+      "category": "Electronics"
+    },
+    {
+      "name": "Logitec Mouse",
+      "id": 4
+    },
+    {
+      "name": "test",
+      "id": 5
+    }
+  ]
+}

@@ -1,9 +1,11 @@
 import ProductDetails from './ProductDetails';
+import useProductsContext from '../hooks/use-products-context';
 
-function ProductList({ products, onDelete, onEdit }) {
+function ProductList() {
+  const { products} = useProductsContext();
   const renderedProducts = products.map((product) => {
     return (
-      <ProductDetails onEdit={onEdit} onDelete={onDelete} key={product.id} product={product} />
+      <ProductDetails key={product.id} product={product} />
     );
   });
 

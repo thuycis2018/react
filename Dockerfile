@@ -1,5 +1,5 @@
 
-FROM node:18
+FROM node:18  AS build
 
 WORKDIR /app
 
@@ -14,9 +14,8 @@ RUN npm run build
 FROM nginx:alpine
 
 # Copy the build directory to the nginx html directory
-COPY --from=0 /app/build /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 
 EXPOSE 80
 
-# Start the nginx server
 CMD ["nginx", "-g", "daemon off;"]

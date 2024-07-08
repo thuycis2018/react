@@ -1,23 +1,24 @@
 import { useState } from 'react';
 import ProductEdit from './ProductEdit';
+import useProductsContext from '../hooks/use-products-context';
 
-function ProductDetails({ product, onDelete, onEdit }) {
+function ProductDetails({ product }) {
   const [showEdit, setShowEdit] = useState(false);
+  const { deleteProductById } = useProductsContext();
 
   const handleDeleteClick = () => {
-    onDelete(product.id);
+    deleteProductById(product.id);
   };
 
   const handleEditClick = () => {
     setShowEdit(!showEdit);
   };
 
-  const handleSubmit = (id, newTitle) => {
+  const handleSubmit = () => {
     setShowEdit(false);
-    onEdit(id, newTitle);
   };
 
-  let content = <h3>{product.title}</h3>;
+  let content = <h3>{product.name}</h3>;
   if (showEdit) {
     content = <ProductEdit onSubmit={handleSubmit} product={product} />;
   }
