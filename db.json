@@ -20,11 +20,9 @@
     },
     {
       "name": "Logitec Mouse",
-      "id": 4
-    },
-    {
-      "name": "test",
-      "id": 5
+      "id": 4,
+      "price": 30,
+      "category": "Electronics"
     }
   ]
 }

@@ -1,5 +1,6 @@
 import { useState} from 'react';
 import useProductsContext from '../hooks/use-products-context';
+import Button from '../components/Button';
 
 function ProductEdit({ product, onSubmit }) {
   const [name, setName] = useState(product.name);
@@ -17,10 +18,18 @@ function ProductEdit({ product, onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="product-edit">
-      <label>Product Name</label>
-      <input className="input" value={name} onChange={handleChange} />
-      <button className="button is-primary">SAVE</button>
+    <form onSubmit={handleSubmit} className="p-0">
+      <div className="flex flex-col mb-6 md:w-full">
+          <label className="mb-2 font-bold text-lg text-grey-darkest">Name</label>
+          <input className="border rounded py-2 px-3 text-grey-darkest bg-gray-100" value={name} onChange={handleChange} />
+        </div>
+        <Button
+          secondary
+          rounded
+          className="mx-auto"
+        >
+          Save
+        </Button>
     </form>
   );
 }

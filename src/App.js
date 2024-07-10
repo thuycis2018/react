@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import ProductCreate from './components/ProductCreate';
-import ProductList from './components/ProductList';
+import ProductCreate from './pages/ProductCreate';
+import ProductList from './pages/ProductList';
+import ProductPage from './pages/ProductPage'
 import useProductsContext from './hooks/use-products-context';
 
 function App() {
@@ -11,9 +12,9 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Products</h1>
       <ProductCreate />
-      <ProductList />     
+      <ProductPage />
+      {/* <ProductList />      */}
     </div>
   );
 }
