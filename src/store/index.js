@@ -3,9 +3,11 @@ import { setupListeners } from '@reduxjs/toolkit/query';
 import { usersApi } from './apis/usersApi';
 import { projectsApi } from './apis/projectsApi';
 import { tasksApi } from './apis/tasksApi';
+import { productsReducer } from './slices/productsSlice';
 
 export const store = configureStore({
   reducer: {
+    products: productsReducer,
     [usersApi.reducerPath]: usersApi.reducer,
     [projectsApi.reducerPath]: projectsApi.reducer,
     [tasksApi.reducerPath]: tasksApi.reducer,
@@ -37,3 +39,8 @@ export {
   useAddTaskMutation,
   useRemoveTaskMutation,
 } from './apis/tasksApi';
+
+// for thunks
+export * from './thunks/fetchProducts';
+export * from './thunks/addProduct';
+export * from './thunks/removeProduct';
