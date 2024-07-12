@@ -1,20 +1,9 @@
-import { useEffect } from 'react';
-import ProductCreate from './pages/ProductCreate';
-import ProductList from './pages/ProductList';
-import ProductPage from './pages/ProductPage'
-import useProductsContext from './hooks/use-products-context';
+import UsersList from './components/users/UsersList';
 
 function App() {
-  const {getProducts} = useProductsContext();
-  useEffect(() => {
-    getProducts();
-  }, [getProducts]);
-
   return (
-    <div className="app">
-      <ProductCreate />
-      <ProductPage />
-      {/* <ProductList />      */}
+    <div className="container m-10 p-10">
+      <UsersList />
     </div>
   );
 }

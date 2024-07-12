@@ -1,4 +1,63 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "name": "Issac"
+    },
+    {
+      "id": 2,
+      "name": "Maya"
+    },
+    {
+      "name": "Ms. Ricardo Kub",
+      "id": 3
+    },
+    {
+      "name": "Drew Lynch",
+      "id": 4
+    },
+    {
+      "name": "Charlie Cormier DDS",
+      "id": 5
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "Migrate from Netsuite to Salesforce",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "name": "Build synthetic sequence APIs",
+      "userId": 2
+    },
+    {
+      "userId": 1,
+      "name": "project qualification",
+      "id": 4
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Prepare script to export data in Netsuite",
+      "url": "https://loremflickr.com/150/150/abstract?lock=30160",
+      "projectId": 1
+    },
+    {
+      "projectId": 1,
+      "url": "https://loremflickr.com/150/150/abstract?lock=83022",
+      "name": "task data",
+      "id": 2
+    },
+    {
+      "projectId": 1,
+      "url": "https://loremflickr.com/150/150/abstract?lock=25431",
+      "name": "task choir",
+      "id": 3
+    }
+  ],
   "products": [
     {
       "name": "Samsung Monitor",
